@@ -77,7 +77,6 @@ instance = ec2.run_instances(
         'APS'
     ],
     UserData='''#!/bin/sh
-    cd /
     git clone https://github.com/IsabellaRO/CloudInsper/
     ./install.sh
     ''',

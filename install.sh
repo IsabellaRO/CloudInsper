@@ -4,6 +4,5 @@ sudo apt install python3-pip -y
 sudo apt-get install git-core -y
 sudo pip3 install flask_restful
 sudo pip3 install flask_httpauth
-cd CloudInsper/
 cd webapp
 python3 app.py
