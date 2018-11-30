@@ -1,4 +1,4 @@
-import boto3, os, errno
+import boto3, os, errno, time
 from botocore.exceptions import ClientError
 #print(boto3.__version__)
 
@@ -18,6 +18,8 @@ for instance in reservations:
         if tag['Value'] == 'Isabella':
             instance.stop()
             instance.terminate()
+            print("terminando instâncias")
+            instance.wait_until_terminated()
 
 keypair = ec2.delete_key_pair(KeyName='Key_pair')
 print("Key pair apagada")
@@ -78,6 +80,8 @@ instance = ec2.run_instances(
     ],
     UserData='''#!/bin/sh
     git clone https://github.com/IsabellaRO/CloudInsper/
+    cd CloudInsper/
+    chmod +x install.sh
     ./install.sh
     ''',
     TagSpecifications=[
