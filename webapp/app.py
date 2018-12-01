@@ -108,4 +108,4 @@ api.add_resource(Help, '/help/', endpoint = 'Help')
 api.add_resource(Healthcheck, '/healthcheck/', endpoint = 'Healthcheck')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False, host='0.0.0.0', port=5000)

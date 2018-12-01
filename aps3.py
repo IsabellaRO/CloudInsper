@@ -79,11 +79,16 @@ instance = ec2.run_instances(
         'APS'
     ],
     UserData='''#!/bin/sh
-    git clone https://github.com/IsabellaRO/CloudInsper/
-    cd CloudInsper/
-    chmod +x install.sh
-    ./install.sh
-    ''',
+mkdir funfou
+git clone https://github.com/IsabellaRO/CloudInsper/
+mkdir funfou2
+cd /CloudInsper/
+mkdir funfou3
+chmod +x install.sh
+mkdir funfou4
+./install.sh
+
+''',
     TagSpecifications=[
         {
             'ResourceType': 'instance',
